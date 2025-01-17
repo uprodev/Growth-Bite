@@ -1,0 +1,67 @@
+.cp-logos {
+  .title {
+    margin: 0 0 20px;
+    font-weight: 600;
+    color: $gray-600;
+  }
+
+  .swiper {
+    .swiper-wrapper {
+      transition-timing-function: linear;
+    }
+
+    .swiper-slide {
+      width: fit-content;
+    }
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    li {
+      padding: 10px;
+
+      img {
+        display: block;
+        width: auto;
+        height: 20px;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    ul {
+      flex-wrap: nowrap;
+      justify-content: space-between;
+
+      li {
+        padding: 10px;
+
+        img {
+          display: block;
+          width: auto;
+          max-width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    .title {
+      margin: 0 0 32px;
+    }
+
+    ul {
+      li {
+        padding: 0;
+      }
+    }
+  }
+}

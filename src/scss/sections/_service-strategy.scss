@@ -1,0 +1,85 @@
+.service-strategy {
+  padding: 50px 0;
+  overflow: hidden;
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: -50vw;
+    top: -50vw;
+    width: 100vw;
+    height: 100vw;
+    transform-origin: center;
+    background: radial-gradient(50% 50% at 50% 50%, rgb(255, 241, 243) 0%, rgba(255, 241, 243, 0) 100%);
+  }
+
+  .container-fluid {
+    position: relative;
+    z-index: 2;
+  }
+
+  .block-header {
+    text-align: center;
+    margin: 0 0 50px;
+
+    h2 {
+      max-width: 18em;
+      margin: 0 auto 23px;
+    }
+
+    p {
+      max-width: 40em;
+      margin: auto;
+    }
+  }
+  .row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 2rem;
+  }
+
+  .card {
+    figure {
+      position: relative;
+      @extend .rounded-shadow;
+      padding-top: 71%;
+      background-color: $white;
+      border-radius: 16px;
+      margin: 0 0 16px;
+
+      img {
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        border-radius: 16px;
+        transform: translateX(-50%);
+        max-width: 69.23%;
+      }
+    }
+
+    h4 {
+      margin: 0 0 17px;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    &:before {
+      left: -45vw;
+      top: -5vw;
+      width: 72.5vw;
+      height: 72.5vw;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding: 95px 0;
+
+    .block-header {
+      margin: 0 0 65px;
+    }
+  }
+}

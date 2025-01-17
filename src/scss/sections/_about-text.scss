@@ -1,0 +1,94 @@
+.about-text {
+  padding: 50px 0;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(180deg, #fcfcfd 0%, #f2f4f7 100%);
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: -50vw;
+    right: -70vw;
+    width: 100vw;
+    height: 100vw;
+    transform-origin: center;
+    background: radial-gradient(50% 50% at 50% 50%, rgb(246, 254, 249) 0%, rgba(246, 254, 249, 0) 100%);
+  }
+
+  .block-bg {
+    @include abs;
+    background: url(../images/bg/bg-dots.svg) center 0 no-repeat;
+    z-index: 1;
+  }
+
+  .container-fluid {
+    position: relative;
+    z-index: 2;
+  }
+
+  .row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 2rem;
+  }
+
+  .image {
+    @extend .rounded-shadow;
+    border-radius: 16px;
+
+    figure {
+      @include img-abs-container(280px);
+
+      img {
+        border-radius: 16px;
+      }
+    }
+  }
+
+  .text {
+    h3 {
+      margin: 0 0 13px;
+    }
+
+    .content-link {
+      margin-top: 18px;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    &:after {
+      top: -18vw;
+      right: -35vw;
+      width: 72.5vw;
+      height: 72.5vw;
+    }
+
+    .image {
+      figure {
+        padding-top: 376px;
+      }
+    }
+
+    .text {
+      padding: 28px 0;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding: 98px 0 95px;
+
+    .row {
+      --bs-gutter-x: 3rem;
+      --bs-gutter-y: 3rem;
+    }
+
+    .image {
+      border-radius: 32px;
+
+      figure {
+        img {
+          border-radius: 32px;
+        }
+      }
+    }
+  }
+}

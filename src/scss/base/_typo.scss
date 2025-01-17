@@ -1,0 +1,74 @@
+input,
+select,
+textarea,
+button {
+  font-family: $font-family-base;
+}
+
+html {
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.5;
+  color: $body-color;
+}
+
+h1 {
+  font-family: $font-family-headlines;
+  font-weight: 700;
+  font-size: clamp($h1-font-size-sm, get-vw($h1-font-size), $h1-font-size);
+  line-height: 1.25;
+  margin: 0;
+  letter-spacing: -0.02em;
+  color: $gray-900;
+}
+
+h2 {
+  font-family: $font-family-headlines;
+  font-weight: 700;
+  font-size: clamp($h2-font-size-sm, get-vw($h2-font-size), $h2-font-size);
+  line-height: 1.25;
+  margin: 0 0 22px;
+  letter-spacing: -0.02em;
+  color: $gray-900;
+}
+
+h3 {
+  font-family: $font-family-headlines;
+  font-weight: 700;
+  font-size: clamp($h3-font-size-sm, get-vw($h3-font-size), $h3-font-size);
+  line-height: 1.333;
+  margin: 0;
+  color: $gray-900;
+}
+
+h4 {
+  font-family: $font-family-headlines;
+  font-size: clamp($h4-font-size-sm, get-vw($h4-font-size), $h4-font-size);
+  font-weight: 700;
+  line-height: 1.555;
+  margin: 0;
+  color: $gray-900;
+}
+
+h5 {
+  font-family: $font-family-headlines;
+  font-size: clamp($h5-font-size-sm, get-vw($h5-font-size), $h5-font-size);
+  font-weight: 600;
+  line-height: 1.56;
+  margin: 0;
+  color: $gray-900;
+}
+
+.lead {
+  font-size: 1.1em;
+  line-height: 1.5;
+  color: $gray-500;
+
+  @include media-breakpoint-up(lg) {
+    font-size: 1.25em;
+  }
+}

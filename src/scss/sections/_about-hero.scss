@@ -1,0 +1,196 @@
+.about-hero {
+  padding: 100px 0 20px;
+  position: relative;
+  background-color: #f0f9ff;
+  overflow: hidden;
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: -50vw;
+    top: -50vw;
+    width: 100vw;
+    height: 100vw;
+    transform-origin: center;
+    background: radial-gradient(50% 50% at 50% 50%, #a6f4c5 0%, #d1fadf 31%, #f0f9ff 100%);
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -70vw;
+    right: -70vw;
+    width: 100vw;
+    height: 100vw;
+    transform-origin: center;
+    background: radial-gradient(50% 50% at 50% 50%, #7cd4fd 0%, #f0f9ff 100%);
+  }
+
+  .block-bg {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate3d(-50%, 0, 0);
+    width: 100vw;
+    height: 65.2vw;
+    background: url(../images/bg/circles3.svg) 50% / cover no-repeat;
+    mix-blend-mode: multiply;
+    z-index: 1;
+  }
+
+  .container-fluid {
+    position: relative;
+    z-index: 2;
+  }
+
+  .block-header {
+    text-align: center;
+    margin: 0 0 50px;
+
+    h2 {
+      max-width: 19em;
+      margin: 0 auto 23px;
+    }
+
+    p {
+      max-width: 46em;
+      margin: 0 auto;
+    }
+  }
+
+  .banner {
+    margin: 0 0 25px;
+    position: relative;
+    @extend .rounded-shadow;
+    border-radius: 16px;
+
+    figure {
+      border-radius: 16px;
+      @include img-abs-container(300px);
+
+      img {
+        border-radius: 16px;
+      }
+    }
+
+    .label {
+      @extend .btn-white;
+      border: 1px solid #bebebe !important;
+      font-size: 16px;
+      color: #101323;
+      position: absolute;
+      pointer-events: none;
+
+      &.label1 {
+        right: 7.7%;
+        bottom: 50%;
+      }
+
+      &.label2 {
+        background: #8a5bf6;
+        color: $white;
+        right: 5%;
+        bottom: 30%;
+      }
+
+      &.label3 {
+        right: 18.5%;
+        bottom: 11.3%;
+      }
+    }
+  }
+
+  .advantages {
+    .row {
+      --bs-gutter-x: 1.5rem;
+      --bs-gutter-y: 1.5rem;
+    }
+
+    .item {
+      border-radius: 16px;
+      background-color: $white;
+      @extend .rounded-shadow;
+      padding: 1rem;
+
+      strong {
+        display: block;
+        color: $gray-900;
+        font-weight: 700;
+        font-size: clamp(2rem, get-vw(3rem), 3rem);
+        line-height: 120%;
+        letter-spacing: -0.02em;
+        margin: 0 0 12px;
+      }
+
+      p {
+        color: $gray-700;
+        margin: 0;
+        font-size: 14px;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    padding-bottom: 50px;
+
+    &:before {
+      left: -45vw;
+      top: -10vw;
+      width: 66vw;
+      height: 66vw;
+    }
+
+    &:after {
+      bottom: -45vw;
+      right: -45vw;
+      width: 66vw;
+      height: 66vw;
+    }
+
+    .image {
+      padding-top: 350px;
+      margin: 0;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding: 130px 0 95px;
+
+    .block-header {
+      margin: 0 0 65px;
+    }
+
+    .banner {
+      margin: 0 0 32px;
+      border-radius: 32px;
+
+      figure {
+        padding-top: 400px;
+
+        img {
+          border-radius: 32px;
+        }
+      }
+
+      .label {
+        &.label1 {
+          bottom: 41%;
+        }
+
+        &.label2 {
+          bottom: 26%;
+        }
+      }
+    }
+
+    .advantages {
+      .item {
+        padding: 1.75rem 1.8rem;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    padding: 175px 0 95px;
+  }
+}

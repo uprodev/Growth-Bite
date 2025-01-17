@@ -1,0 +1,85 @@
+img {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  background-color: $light;
+}
+
+.global-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.container-fluid {
+  padding-left: calc(#{$container-padding} / 2);
+  padding-right: calc(#{$container-padding} / 2);
+  max-width: calc(#{$container-max} + #{$container-padding});
+}
+
+figure {
+  margin: 0;
+  overflow: hidden;
+}
+
+a {
+  color: inherit;
+  transition: all 0.2s;
+  text-decoration: underline;
+
+  &:hover {
+    color: inherit;
+  }
+}
+
+.swiper-slide {
+  height: auto !important;
+  transition-property: all;
+}
+
+.swiper-controls {
+  .btn {
+    width: 42px;
+    height: 42px;
+    background-color: $primary;
+
+    &:before {
+      display: none;
+    }
+
+    .btn-icon {
+      margin: 0;
+      position: relative;
+      left: 0;
+      top: 0;
+      transform: none;
+    }
+
+    @include media-breakpoint-up(lg) {
+      &:hover,
+      &:active {
+        background-color: $primary;
+      }
+
+      &:before {
+        display: block;
+        background-color: $primary;
+      }
+    }
+  }
+}
+
+.rounded-shadow {
+  box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.06), 0 1px 3px 0 rgba(16, 24, 40, 0.1);
+  border: 2px solid $white;
+  border-radius: 16px;
+}

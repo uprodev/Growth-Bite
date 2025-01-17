@@ -1,0 +1,155 @@
+.home-cases {
+  padding: 0 0 50px;
+
+  h2 {
+    margin: 0 0 18px;
+  }
+
+  .lead {
+    margin: 0 0 30px;
+  }
+
+  .row {
+    --bs-gutter-x: 1rem;
+    --bs-gutter-y: 2rem;
+  }
+
+  .case-card {
+    border: 2px solid #fff;
+    border-radius: 16px;
+    padding: 20px;
+    background: #fcfcfd;
+    display: flex;
+    flex-direction: column;
+
+    .card-body {
+      padding: 0 0 24px;
+
+      h3 {
+        margin: 8px 0;
+      }
+      h4 {
+        margin: 8px 0 20px;
+      }
+
+      p {
+        font-size: 14px;
+        margin: 0 0 22px;
+      }
+
+      .content-link {
+        font-size: 14px;
+      }
+    }
+
+    figure {
+      margin-top: auto;
+      @include img-abs-container(71.25%);
+
+      img {
+        border-radius: 10px;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    .case-card {
+      .card-body {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .content-link {
+          margin-top: auto;
+        }
+      }
+
+      figure {
+        flex: 0 0 auto;
+      }
+    }
+
+    .col-12 {
+      .case-card {
+        flex-direction: row;
+
+        .card-body {
+          height: auto;
+          display: block;
+          align-self: center;
+          padding: 0 32px 0 0;
+        }
+
+        .card-img {
+          flex: 0 0 auto;
+          width: 40%;
+          max-width: 391px;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    .col-12 {
+      .case-card {
+        .card-img {
+          img {
+            border-radius: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    padding: 0 0 95px;
+
+    .row {
+      --bs-gutter-x: 2rem;
+    }
+
+    h2 {
+      margin: 0 0 23px;
+    }
+
+    .lead {
+      margin: 0 0 63px;
+    }
+
+    .case-card {
+      padding: 30px;
+
+      .card-body {
+        padding: 0 0 33px;
+
+        h3 {
+          margin: 12px 0 13px;
+        }
+
+        h4 {
+          margin: 15px 0 37px;
+        }
+
+        p {
+          font-size: 16px;
+          margin: 0 0 34px;
+        }
+      }
+    }
+
+    .col-12 {
+      .case-card {
+        border-radius: 32px;
+        padding: 47px;
+
+        .card-body {
+          padding: 0 64px 6px 0;
+
+          .content-link {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}

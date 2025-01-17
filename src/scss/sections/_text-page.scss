@@ -1,0 +1,156 @@
+.text-page {
+  padding: 100px 0 50px;
+  position: relative;
+  overflow: hidden;
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: -50vw;
+    top: -20vw;
+    width: 100vw;
+    height: 100vw;
+    transform-origin: center;
+    background: radial-gradient(50% 50% at 50% 50%, #a6f4c5 0%, #d1fadf 31%, #f2f4f7 100%);
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 300vw;
+    right: -170vw;
+    width: 250vw;
+    height: 250vw;
+    transform-origin: center;
+    background: radial-gradient(50% 50% at 50% 50%, #7cd4fd 0%, #f2f4f7 100%);
+  }
+
+  .container-fluid {
+    position: relative;
+    z-index: 2;
+  }
+
+  .block-header {
+    text-align: center;
+    margin: 0 0 50px;
+
+    h2 {
+      max-width: 19em;
+      margin: 0 auto 23px;
+    }
+
+    p {
+      max-width: 45em;
+      margin: 0 auto;
+    }
+  }
+
+  .content-nav {
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        margin: 0 0 11px;
+
+        &.active {
+          a {
+            &:after {
+              opacity: 1;
+            }
+          }
+        }
+      }
+
+      a {
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 125%;
+        text-transform: capitalize;
+        color: $brand-blue;
+        display: inline-block;
+        padding: 0 27px 0 0;
+
+        &:after {
+          content: "";
+          background: url(../images/icons/chevron-right.svg) no-repeat;
+          width: 27px;
+          height: 16px;
+          display: inline-block;
+          vertical-align: -0.1em;
+          opacity: 0;
+        }
+
+        &:hover {
+          color: $gray-900;
+        }
+      }
+    }
+  }
+
+  .page-content {
+    h4 {
+      margin-top: 35px;
+    }
+
+    ul {
+      padding: 0 0 0 24px;
+      line-height: 1.4;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    .content-nav {
+      width: 100vw;
+      overflow: auto;
+      background-color: $light;
+      padding: 10px calc(#{$container-padding} / 2);
+      white-space: nowrap;
+      margin: 0 calc(#{$container-padding} / -2);
+
+      ul {
+        display: inline-flex;
+
+        li {
+          margin: 0 15px 0 0;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    &:before {
+      left: -62vw;
+      bottom: -20vw;
+      width: 85vw;
+      height: 85vw;
+    }
+
+    &:after {
+      top: 50vw;
+      right: -62vw;
+      width: 82vw;
+      height: 82vw;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding: 130px 0 79px;
+
+    .block-header {
+      margin: 0 0 95px;
+    }
+
+    .page-content {
+      h4 {
+        margin: 64px 0 17px;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    padding: 175px 0 79px;
+  }
+}

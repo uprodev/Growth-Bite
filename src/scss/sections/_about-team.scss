@@ -1,0 +1,124 @@
+.about-team {
+  padding: 0 0 50px;
+
+  .block-header {
+    margin: 0 0 30px;
+
+    .swiper-controls {
+      display: none;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .team-item {
+    @extend .rounded-shadow;
+    border-radius: 16px;
+    position: relative;
+
+    a {
+      text-decoration: none;
+    }
+
+    figure {
+      @include img-abs-container(130%);
+      img {
+        border-radius: 16px;
+      }
+
+      .team-social {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        width: 32px;
+        height: 32px;
+
+        img {
+          border-radius: 0;
+        }
+      }
+    }
+
+    .item-info {
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+      border-radius: 12px;
+      padding: 15px;
+      background-color: $white;
+      font-size: 14px;
+      line-height: 143%;
+      letter-spacing: 0.02em;
+      color: #667085;
+
+      p {
+        margin: 0;
+      }
+
+      h4 {
+        margin: 0 0 -2px;
+      }
+
+      h5 {
+        color: $brand-blue;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 150%;
+        letter-spacing: 0.01em;
+        margin: 0 0 19px;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    .block-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      .text {
+        max-width: 65%;
+      }
+
+      .swiper-controls {
+        display: flex;
+      }
+    }
+
+    .swiper-pagination {
+      display: none;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding: 0 0 95px;
+
+    .block-header {
+      margin: 0 0 63px;
+    }
+
+    .team-item {
+      figure {
+        .team-social {
+          top: 22px;
+          right: 22px;
+        }
+      }
+
+      .item-info {
+        left: 22px;
+        right: 22px;
+        bottom: 22px;
+      }
+    }
+  }
+
+  @media (min-width: 1244px) {
+    .swiper {
+      padding-right: calc(50vw - 648px);
+    }
+  }
+}

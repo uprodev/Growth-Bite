@@ -1,0 +1,142 @@
+@mixin placeholder($color: $placeholder-color, $opacity: 1) {
+  &::-webkit-input-placeholder {
+    color: $color;
+    opacity: $opacity;
+  }
+  &:-moz-placeholder {
+    color: $color;
+    opacity: $opacity;
+  }
+  &::-moz-placeholder {
+    color: $color;
+    opacity: $opacity;
+  }
+  &:-ms-input-placeholder {
+    color: $color;
+    opacity: $opacity;
+  }
+}
+
+@mixin hideScroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@mixin abs {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+@mixin abs-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+@mixin img-fit {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@mixin img-abs-container($p) {
+  display: block;
+  position: relative;
+  padding-top: $p;
+
+  img,
+  video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+@mixin hl($c1: transparent, $c2: transparent) {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+  &::selection {
+    background-color: $c1;
+    color: $c2;
+  }
+  &::-moz-selection {
+    background-color: $c1;
+    color: $c2;
+  }
+}
+
+@function max($numbers...) {
+  @return m#{a}x(#{$numbers});
+}
+
+@function min($numbers...) {
+  @return m#{i}n(#{$numbers});
+}
+
+@mixin staggered_transitions($nth: 1, $items: 2, $initial: 0, $step: 0.1) {
+  @for $i from $nth through $items {
+    &:nth-child(#{$i}) {
+      transition-delay: #{$initial}s;
+    }
+    $initial: $initial + $step;
+  }
+}
+
+@mixin staggered_transitions_inner($nth: 1, $items: 2, $initial: 0, $step: 0.1) {
+  @for $i from $nth through $items {
+    &:nth-child(#{$i}) {
+      & > * {
+        transition-delay: #{$initial}s;
+      }
+    }
+    $initial: $initial + $step;
+  }
+}
+
+@function strip-unit($number) {
+  @if type-of($number) == "number" and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+  @return $number;
+}
+
+@function get-vw($font) {
+  $fs-px: $font * 16 / 1rem;
+  @return #{$fs-px / 1440 * 100}vw;
+}
+
+@mixin underlineHover($color) {
+  position: relative;
+
+  &:after {
+    content: "";
+    border-bottom: 2px solid $color;
+    transform: scaleX(0);
+    transition: transform 500ms cubic-bezier(0.19, 1, 0.22, 1);
+    transform-origin: right center 0px;
+    width: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+  }
+
+  &:hover {
+    &:after {
+      transform: scaleX(1);
+      transform-origin: left center 0px;
+    }
+  }
+}

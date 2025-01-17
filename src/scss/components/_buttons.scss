@@ -1,0 +1,122 @@
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  box-shadow: none;
+  border: none;
+  border-radius: 8px;
+  padding: 0 18px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  color: $white;
+  text-decoration: none;
+  transition: all 0.3s;
+  cursor: pointer;
+
+  &.btn-sm {
+    padding-bottom: 2px;
+  }
+
+  &.btn-primary {
+    background-color: $primary;
+
+    &:hover {
+      color: $white;
+      background-color: $gray-800;
+    }
+  }
+
+  &.btn-secondary {
+    border: 1px solid #d0d5dd;
+    border-radius: 8px;
+    background-color: $white;
+    font-weight: 600;
+    font-size: 16px;
+    box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+    color: $gray-700;
+
+    &:hover {
+      color: $white;
+      background-color: $gray-800;
+    }
+  }
+
+  &.btn-white {
+    border: 1px solid $white;
+    background-color: $white;
+    box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+    color: $gray-600;
+
+    &:hover {
+      color: $white;
+      border-color: $gray-800;
+      background-color: $gray-800;
+    }
+  }
+
+  &.btn-outline {
+    background-color: transparent;
+    border: 1px solid $gray-600;
+    color: $gray-600;
+
+    &:hover {
+      color: $white;
+      border-color: $gray-800;
+      background-color: $gray-800;
+    }
+  }
+
+  &.btn-shadow {
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+
+    &:hover {
+      box-shadow: none;
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    width: auto;
+    display: inline-flex;
+  }
+
+  @include media-breakpoint-up(lg) {
+    &:not(.btn-sm) {
+      height: 60px;
+      padding: 0 28px;
+      font-size: 18px;
+      line-height: 156%;
+    }
+  }
+}
+
+.content-link {
+  color: $primary;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  font-weight: 500;
+
+  svg {
+    margin: 2px 0 0 4px;
+    transition: all 0.2s;
+
+    path {
+      stroke: $primary;
+      transition: all 0.2s;
+    }
+  }
+
+  &:hover {
+    color: $primary-hover;
+
+    svg {
+      transform: translateX(3px);
+
+      path {
+        stroke: $primary-hover;
+      }
+    }
+  }
+}

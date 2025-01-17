@@ -1,0 +1,130 @@
+.home-services {
+  padding: 50px 0;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(180deg, #fcfcfd 0%, #f2f4f7 100%);
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: -50vw;
+    top: -50vw;
+    width: 100vw;
+    height: 100vw;
+    transform-origin: center;
+    background: radial-gradient(50% 50% at 50% 50%, rgb(255, 241, 243) 0%, rgba(255, 241, 243, 0) 100%);
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: -50vw;
+    right: -70vw;
+    width: 100vw;
+    height: 100vw;
+    transform-origin: center;
+    background: radial-gradient(50% 50% at 50% 50%, rgb(246, 254, 249) 0%, rgba(246, 254, 249, 0) 100%);
+  }
+
+  .block-bg {
+    @include abs;
+    background: url(../images/bg/bg-dots.svg) center 0 no-repeat;
+    z-index: 1;
+  }
+
+  h2 {
+    margin: 0 0 23px;
+  }
+
+  .lead {
+    margin: 0 0 30px;
+  }
+
+  .row {
+    --bs-gutter-x: 1rem;
+    --bs-gutter-y: 2rem;
+  }
+
+  .service-card {
+    border-radius: 15px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.06), 0 1px 3px 0 rgba(16, 24, 40, 0.1);
+    background: #fcfcfd;
+    color: $gray-700;
+
+    .card-body {
+      padding: 20px 20px 5px;
+      border: 2px solid #fff;
+      border-bottom: none;
+      border-radius: 15px 15px 0 0;
+
+      h5 {
+        margin: 0 0 8px;
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 157%;
+        margin: 0 0 22px;
+      }
+
+      .content-link {
+        font-size: 14px;
+      }
+    }
+
+    figure {
+      margin-top: auto;
+      @include img-abs-container(69.4%);
+
+      img {
+        border-radius: 0 0 20px 20px;
+      }
+    }
+  }
+
+  .container-fluid {
+    position: relative;
+    z-index: 2;
+  }
+
+  @include media-breakpoint-up(md) {
+    &:before {
+      left: -35vw;
+      top: -20vw;
+      width: 72.5vw;
+      height: 72.5vw;
+    }
+
+    &:after {
+      top: -18vw;
+      right: -35vw;
+      width: 72.5vw;
+      height: 72.5vw;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding: 100px 0 70px;
+
+    .row {
+      --bs-gutter-x: 2rem;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    padding: 95px 0;
+
+    .lead {
+      margin: 0 0 64px;
+    }
+
+    .service-card {
+      .card-body {
+        padding: 30px 30px 10px;
+      }
+    }
+  }
+}

@@ -1,0 +1,138 @@
+.banner-home {
+  padding: 100px 0 20px;
+  position: relative;
+  background-color: #f0f9ff;
+  overflow: hidden;
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    width: 107vw;
+    height: 107vw;
+    background: url(../images/bg/circles.svg) 50% / cover no-repeat;
+    mix-blend-mode: multiply;
+  }
+
+  .bg-left {
+    position: absolute;
+    left: -110vw;
+    top: -80vw;
+    width: 150vw;
+    height: 150vw;
+    transform-origin: center;
+    background: radial-gradient(50% 50% at 50% 50%, #a6f4c5 0%, #d1fadf 31%, #f0f9ff 100%);
+  }
+
+  .bg-right {
+    position: absolute;
+    bottom: -100vw;
+    right: -170vw;
+    width: 250vw;
+    height: 250vw;
+    transform-origin: center;
+    background: radial-gradient(50% 50% at 50% 50%, #7cd4fd 0%, #f0f9ff 100%);
+  }
+
+  .container-fluid {
+    position: relative;
+    z-index: 3;
+  }
+
+  .case-link {
+    display: flex;
+    justify-content: center;
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      background: $orange1;
+      border: 1px solid $orange;
+      border-radius: 30px;
+      font-size: 11px;
+      padding: 4px;
+      text-decoration: none;
+      color: $red;
+      font-weight: 500;
+
+      span {
+        display: inline-block;
+        color: $brown;
+        padding: 0 6px 0 0;
+        margin: 0 6px 0 0;
+        border-right: 1px solid $orange;
+        font-weight: 600;
+      }
+    }
+  }
+
+  h1 {
+    margin: 13px 0 27px;
+  }
+
+  .cp-logos {
+    position: relative;
+    z-index: 3;
+    margin: 20px 0 0;
+    text-align: center;
+  }
+
+  @include media-breakpoint-up(md) {
+    padding-bottom: 50px;
+
+    .bg-left {
+      left: -21vw;
+      top: -15vw;
+      width: 47.5vw;
+      height: 47.5vw;
+    }
+
+    .bg-right {
+      bottom: -52vw;
+      right: -74vw;
+      width: 125vw;
+      height: 125vw;
+    }
+
+    .case-link {
+      display: flex;
+      justify-content: center;
+
+      a {
+        font-size: 12px;
+        padding: 5px 12px;
+
+        span {
+          padding: 0 12px 0 0;
+          margin: 0 12px 0 0;
+        }
+      }
+    }
+
+    .cp-logos {
+      margin: 40px 0 0;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding: 120px 0 95px;
+
+    .btn-wrap {
+      margin: 48px 0 0;
+    }
+
+    .cp-logos {
+      margin: 50px 0 0;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    padding: 144px 0 95px;
+
+    .cp-logos {
+      margin: 112px 0 0;
+    }
+  }
+}

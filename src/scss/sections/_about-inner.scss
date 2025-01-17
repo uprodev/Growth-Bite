@@ -1,0 +1,135 @@
+.about-inner {
+  padding: 100px 0 20px;
+  position: relative;
+  background-color: #f0f9ff;
+  overflow: hidden;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: -170vw;
+    right: -170vw;
+    width: 250vw;
+    height: 250vw;
+    transform-origin: center;
+    background: radial-gradient(50% 50% at 50% 50%, #7cd4fd 0%, #f0f9ff 100%);
+  }
+
+  .block-bg {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate3d(-50%, 0, 0);
+    width: 100vw;
+    height: 61vw;
+    background: url(../images/bg/circles4.svg) 50% / cover no-repeat;
+    mix-blend-mode: multiply;
+    z-index: 1;
+  }
+
+  .container-fluid {
+    position: relative;
+    z-index: 2;
+  }
+
+  .row {
+    --bs-gutter-y: 2rem;
+  }
+
+  .block-header {
+    text-align: center;
+    margin: 0 0 50px;
+
+    h2 {
+      max-width: 19em;
+      margin: 0 auto 23px;
+    }
+
+    p {
+      max-width: 46em;
+      margin: 0 auto;
+    }
+  }
+
+  .image {
+    @extend .rounded-shadow;
+    border-radius: 16px;
+
+    figure {
+      @include img-abs-container(280px);
+
+      img {
+        border-radius: 16px;
+      }
+    }
+  }
+
+  .text {
+    color: #667085;
+
+    h4 {
+      margin: 0 0 17px;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-weight: 700;
+
+      li {
+        margin: 0 0 15px;
+      }
+    }
+
+    .content-link {
+      margin-top: 14px;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    .col-image {
+      order: -1;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    padding-bottom: 50px;
+
+    &:after {
+      top: 0;
+      right: -62vw;
+      width: 82vw;
+      height: 82vw;
+      transform: translateY(-40%);
+    }
+
+    .image {
+      height: 100%;
+
+      figure {
+        height: 100%;
+      }
+    }
+
+    .text {
+      padding: 20px 0 24px;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding: 130px 0 58px;
+
+    .block-header {
+      margin: 0 0 95px;
+    }
+
+    .row {
+      --bs-gutter-y: 2.75rem;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    padding: 175px 0 58px;
+  }
+}
