@@ -22,9 +22,114 @@
     transform: translate3d(-50%, 0, 0);
     width: 100vw;
     height: 61vw;
-    background: url(../images/bg/circles4.svg) 50% / cover no-repeat;
+    // background: url(../images/bg/circles4.svg) 50% / cover no-repeat;
     mix-blend-mode: multiply;
     z-index: 1;
+
+    .block-bg-item {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 100vw;
+      height: 61vw;
+      background-position: 50% 0;
+      background-size: auto;
+      background-repeat: no-repeat;
+      transform: translate3d(-50%, 0, 0) scale(0);
+      transform-origin: 50% 0;
+
+      &--c1 {
+        background-image: url(../images/bg/c1.svg);
+        animation: flash1 10s ease 0s 1 both;
+      }
+      &--c2 {
+        background-image: url(../images/bg/c2.svg);
+        animation: flash2 10s ease 0s 1 both;
+      }
+      &--c3 {
+        background-image: url(../images/bg/c3.svg);
+        animation: flash3 10s ease 0s 1 both;
+      }
+      &--c4 {
+        background-image: url(../images/bg/c4.svg);
+        animation: flash4 10s ease 0s 1 both;
+      }
+
+      @keyframes flash1 {
+        0% {
+          transform: translate3d(-50%, 0, 0) scale(0);
+        }
+        10% {
+          transform: translate3d(-50%, 0, 0) scale(1);
+        }
+        90% {
+          transform: translate3d(-50%, 0, 0) scale(1);
+        }
+        100% {
+          transform: translate3d(-50%, 0, 0) scale(0);
+        }
+      }
+      @keyframes flash2 {
+        0% {
+          transform: translate3d(-50%, 0, 0) scale(0);
+        }
+        10% {
+          transform: translate3d(-50%, 0, 0) scale(0);
+        }
+        20% {
+          transform: translate3d(-50%, 0, 0) scale(1);
+        }
+        80% {
+          transform: translate3d(-50%, 0, 0) scale(1);
+        }
+        90% {
+          transform: translate3d(-50%, 0, 0) scale(0);
+        }
+        100% {
+          transform: translate3d(-50%, 0, 0) scale(0);
+        }
+      }
+      @keyframes flash3 {
+        0% {
+          transform: translate3d(-50%, 0, 0) scale(0);
+        }
+        20% {
+          transform: translate3d(-50%, 0, 0) scale(0);
+        }
+        30% {
+          transform: translate3d(-50%, 0, 0) scale(1);
+        }
+        70% {
+          transform: translate3d(-50%, 0, 0) scale(1);
+        }
+        80% {
+          transform: translate3d(-50%, 0, 0) scale(0);
+        }
+        100% {
+          transform: translate3d(-50%, 0, 0) scale(0);
+        }
+      }
+      @keyframes flash4 {
+        0% {
+          transform: translate3d(-50%, 0, 0) scale(0);
+        }
+        30% {
+          transform: translate3d(-50%, 0, 0) scale(0);
+        }
+        40% {
+          transform: translate3d(-50%, 0, 0) scale(1);
+        }
+        60% {
+          transform: translate3d(-50%, 0, 0) scale(1);
+        }
+        70% {
+          transform: translate3d(-50%, 0, 0) scale(0);
+        }
+        100% {
+          transform: translate3d(-50%, 0, 0) scale(0);
+        }
+      }
+    }
   }
 
   .container-fluid {
