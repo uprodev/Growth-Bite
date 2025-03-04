@@ -12,6 +12,16 @@
 
     .swiper-slide {
       width: fit-content;
+      display: inline-flex;
+      align-items: center;
+
+      img {
+        display: block;
+        width: auto;
+        height: auto;
+        max-width: 100px;
+        max-height: 20px;
+      }
     }
   }
 
@@ -26,11 +36,15 @@
 
     li {
       padding: 10px;
+      display: inline-flex;
+      align-items: center;
 
       img {
         display: block;
         width: auto;
-        height: 20px;
+        height: auto;
+        max-width: 100px;
+        max-height: 20px;
       }
     }
   }
@@ -44,10 +58,17 @@
         padding: 10px;
 
         img {
-          display: block;
-          width: auto;
-          max-width: 100%;
-          height: auto;
+          max-width: 130px;
+          max-height: 32px;
+        }
+      }
+    }
+
+    .swiper {
+      .swiper-slide {
+        img {
+          max-width: 130px;
+          max-height: 32px;
         }
       }
     }

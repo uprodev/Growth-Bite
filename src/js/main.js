@@ -106,13 +106,15 @@ jQuery(document).ready(function ($) {
     $(this).find(".icon").append('<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 7.5L10 12.5L15 7.5" stroke="#475467" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/></svg>');
   });
   $(".navigation-main .menu-parent > a").on("click", function (e) {
-    e.preventDefault();
-    e.stopPropagation();
-    if ($(this).closest("li").hasClass("sub-opened")) {
-      $(this).closest("li").removeClass("sub-opened").find("ul").slideUp(300);
-    } else {
-      $(".navigation-main .sub-opened").removeClass("sub-opened").find("ul").slideUp(300);
-      $(this).closest("li").addClass("sub-opened").find("ul").slideDown(300);
+    if ($(window).width() < winLg) {
+      e.preventDefault();
+      e.stopPropagation();
+      if ($(this).closest("li").hasClass("sub-opened")) {
+        $(this).closest("li").removeClass("sub-opened").find("ul").slideUp(300);
+      } else {
+        $(".navigation-main .sub-opened").removeClass("sub-opened").find("ul").slideUp(300);
+        $(this).closest("li").addClass("sub-opened").find("ul").slideDown(300);
+      }
     }
   });
   $(document).on("click", function (e) {
