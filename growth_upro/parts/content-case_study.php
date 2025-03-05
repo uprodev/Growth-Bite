@@ -21,14 +21,21 @@
   <?php endif ?>
 
   <?php if (isset($args['index']) && $args['index'] == 0): ?>
-    <h3><?php the_title() ?></h3>
+
+    <?php if ($field = get_field('subtitle')): ?>
+      <h3><?= $field ?></h3>
+    <?php endif ?>
 
     <?php if (has_excerpt()): ?>
       <?php the_excerpt() ?>
     <?php endif ?>
 
   <?php else: ?>
-    <h4><?php the_title() ?></h4>
+
+    <?php if ($field = get_field('subtitle')): ?>
+      <h4><?= $field ?></h4>
+    <?php endif ?>
+
   <?php endif ?>
 
   <a href="<?php the_permalink() ?>" class="content-link">

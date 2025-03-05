@@ -54,17 +54,21 @@ if($args['row']):
         <div class="logos-slider swiper">
           <div class="swiper-wrapper">
 
-            <?php foreach($logos['gallery'] as $image): ?>
+            <?php for ($i = 0; $i < 4; $i++) { ?>
+              
+              <?php foreach($logos['gallery'] as $image): ?>
 
-              <div class="swiper-slide">
-                <?php if (pathinfo($image['url'])['extension'] == 'svg'): ?>
-                  <img src="<?= $image['url'] ?>" alt="<?= $image['alt'] ?>">
-                <?php else: ?>
-                  <?= wp_get_attachment_image($image['ID'], 'full') ?>
-                <?php endif ?>
-              </div>
+                <div class="swiper-slide">
+                  <?php if (pathinfo($image['url'])['extension'] == 'svg'): ?>
+                    <img src="<?= $image['url'] ?>" alt="<?= $image['alt'] ?>">
+                  <?php else: ?>
+                    <?= wp_get_attachment_image($image['ID'], 'full') ?>
+                  <?php endif ?>
+                </div>
 
-            <?php endforeach; ?>
+              <?php endforeach; ?>
+
+            <?php } ?>
 
           </div>
         </div>
